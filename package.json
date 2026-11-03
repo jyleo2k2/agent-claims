@@ -1,0 +1,20 @@
+{
+  "name": "agent-claims",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Give parallel coding sessions separate Git worktrees and exclusive file scopes.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=24" },
+  "bin": { "agent-claims": "dist/cli.js" },
+  "files": ["dist", "README.md", "PROVENANCE.md"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "typescript": "5.9.3"
+  }
+}
