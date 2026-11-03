@@ -1,8 +1,10 @@
 ---
 created: 2026-11-03T13:38
-updated: 2026-11-03T16:46
+updated: 2026-11-03T17:30
 ---
 # agent-claims
+
+[![CI](https://github.com/jyleo2k2/agent-claims/actions/workflows/ci.yml/badge.svg)](https://github.com/jyleo2k2/agent-claims/actions/workflows/ci.yml)
 
 여러 코딩 세션이 같은 파일을 수정하기 전에 **작업 범위를 선점하는 Git CLI**입니다.
 
@@ -152,7 +154,7 @@ esac
 
 `.github/workflows/ci.yml`에는 Node 24의 Windows·Ubuntu 실행을 구성했습니다. 원격 CI 통과 여부와 로컬에서 수행한 검증은 구분합니다. fixture는 `.test-artifacts/`에 남아 실패 상태를 직접 확인할 수 있습니다.
 
-2026-11-03 Windows에서 Node 24.14.1·Git 2.54.0으로 실제 Git 저장소의 통합 테스트를 수행했습니다. tarball에 빌드한 JavaScript와 문서만 포함되는지 확인하고, 별도 저장소에 설치한 패키지로 세션을 생성했습니다. 개발 의존성 없이 실행되는 것도 확인했습니다. Ubuntu·Git 최소 버전·원격 CI 실행 결과는 아직 확인하지 않았습니다.
+2026-11-03 Windows에서 Node 24.14.1·Git 2.54.0으로 실제 Git 저장소의 통합 테스트 14개를 통과했습니다. tarball에 빌드한 JavaScript와 문서만 포함되는지 확인하고, 별도 저장소에 설치한 패키지로 세션을 생성했습니다. 개발 의존성 없이 실행되는 것도 확인했습니다. 같은 날 [GitHub Actions](https://github.com/jyleo2k2/agent-claims/actions/runs/41603485256)에서 Windows·Ubuntu 작업이 모두 통과했습니다(Ubuntu는 Windows 전용 경로 별칭 사례 제외). Git 최소 버전에서의 실행은 확인하지 않았습니다.
 
 ```text
 src/session.ts              Git·경로·잠금·세션 수명주기
