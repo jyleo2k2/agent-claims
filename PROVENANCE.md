@@ -1,14 +1,14 @@
-# 개발 경위와 원본
+---
+created: 2026-11-03T13:38
+updated: 2026-11-05T09:12
+---
+# 개발 경위
 
 ## 출발점
 
-- 원본 프로젝트: [jyleo2k2/six-opening](https://github.com/jyleo2k2/six-opening)
-- 기준 커밋: [`a7d50c6bd564008dbc7b6d7bdcce5091553241b9`](https://github.com/jyleo2k2/six-opening/tree/a7d50c6bd564008dbc7b6d7bdcce5091553241b9)
-- 원본 구현: [scripts/git-session-manager.mjs](https://github.com/jyleo2k2/six-opening/blob/a7d50c6bd564008dbc7b6d7bdcce5091553241b9/scripts/git-session-manager.mjs)
-- 원본 검증: [scripts/git-session-manager.test.mjs](https://github.com/jyleo2k2/six-opening/blob/a7d50c6bd564008dbc7b6d7bdcce5091553241b9/scripts/git-session-manager.test.mjs)
 - 독립 버전 개발 시작: 2026-11-03
 
-원본은 6인 팀 프로젝트에서 Claude·Codex 세션을 브랜치·worktree·파일 선점·PR로 분리하기 위해 사용한 개발 하네스입니다. 원본 프로젝트의 완성 결과와 이 독립 버전의 사용 실적은 구분합니다.
+6인 팀 프로젝트에서 사용하던 개발 도구를 바탕으로, 코딩 세션의 워크트리와 수정 범위를 관리하는 독립 CLI를 만들었습니다. 팀 프로젝트에서 사용한 도구와 이 독립 버전의 사용 실적은 구분합니다.
 
 ## 이어받은 판단
 
@@ -28,10 +28,10 @@
 | 자동 훅 설치·정리 명령 포함 | 훅은 수동 연결. 종료는 선점 해제까지이며 파일·브랜치·worktree 보존 |
 | JavaScript 단일 스크립트 | 엄격한 TypeScript 세션 모델과 작은 CLI 진입점으로 분리. 외부 JSON은 런타임 검증 |
 
-원본의 코드와 설계에 기반해 AI 코딩 도구와 함께 독립 버전을 작성했습니다. 이 저장소의 생성일을 원본 도구의 개발 시작일로 제시하지 않으며, 다른 팀·사용자의 채택이나 생산성 향상 수치는 아직 주장하지 않습니다.
+기존 팀 도구의 코드와 설계에 기반해 AI 코딩 도구와 함께 독립 버전을 작성했습니다. 이 저장소의 생성일을 팀 도구의 개발 시작일로 제시하지 않으며, 다른 팀·사용자의 채택이나 생산성 향상 수치는 아직 주장하지 않습니다.
 
 ## 재현할 수 있는 확인
 
 `npm test`의 각 사례는 별도 Git 저장소와 worktree를 만들어 실행합니다. 동시 프로세스가 동일 범위를 선점할 때 하나만 성공하는지, 서로 다른 범위라면 두 상태가 모두 남는지 확인합니다. 실패 fixture는 `.test-artifacts/`에 보존합니다.
 
-원본에 공개 라이선스 파일은 확인되지 않았습니다. 이 독립 버전은 `UNLICENSED`, npm 공개 배포 비활성화 상태로 시작합니다.
+이 독립 버전은 `UNLICENSED`, npm 공개 배포 비활성화 상태로 시작합니다.

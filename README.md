@@ -1,6 +1,6 @@
 ---
 created: 2026-11-03T13:38
-updated: 2026-11-03T17:30
+updated: 2026-11-05T09:12
 ---
 # agent-claims
 
@@ -23,7 +23,7 @@ my-app-sessions/
 
 팀 프로젝트에서 서로 다른 AI 도구를 사용하며 작업 규칙을 문서로 공유했습니다. AI가 규칙을 따르지 않는 경우가 있어, 브랜치·worktree·파일 선점을 실행 코드와 훅으로 강제하는 하네스를 만들었습니다.
 
-원본 도구는 팀원 이름과 프로젝트 경로, 개발 서버와 PR 정책까지 한곳에 묶여 있었습니다. 이 저장소에서는 세션 생성·파일 선점·범위 검사를 분리해 다른 Git 저장소에서도 사용할 수 있게 만들었습니다. 원본 코드와 분리 과정은 [PROVENANCE.md](PROVENANCE.md)에 기록했습니다.
+팀에서 쓰던 도구는 팀원 이름과 프로젝트 경로, 개발 서버와 PR 정책까지 한곳에 묶여 있었습니다. 이 저장소에서는 세션 생성·파일 선점·범위 검사를 분리해 다른 Git 저장소에서도 사용할 수 있게 만들었습니다. 독립 도구로 분리한 과정은 [PROVENANCE.md](PROVENANCE.md)에 기록했습니다.
 
 ## 빠르게 사용하기
 
@@ -161,7 +161,7 @@ src/session.ts              Git·경로·잠금·세션 수명주기
 src/cli.ts                  명령 파싱·JSON 출력·종료 코드
 test/session.test.mjs        실제 저장소·병렬 프로세스 통합 테스트
 .github/workflows/ci.yml     Windows·Ubuntu 테스트와 패키지 구성 검사
-PROVENANCE.md               원본 커밋·변경 이유·개발 경위
+PROVENANCE.md               변경 이유·개발 경위
 ```
 
 `npm pack`으로 빌드 결과와 문서를 담은 로컬 tarball을 만들 수 있습니다. npm 공개 배포는 하지 않았으며 `private: true`로 비활성화되어 있습니다.
